@@ -8,8 +8,8 @@ const createFavorites = async (content) => {
     await db('favorites').insert(content);
 }
 
-const deleteFavorites = async (id) => {
-    await db('favorites').delete().where({ id });
+const deleteFavorites = async (showId, userId) => {
+    await db('favorites').delete().where({ showId, userId });
 }
 
 module.exports = {
